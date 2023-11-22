@@ -79,6 +79,15 @@ bool FileExists(std::string dir) {
 #endif
 
 
+enum class State {
+	Beg,
+	Directive,
+	Inlcude,
+	IncludeBeg,
+	Fail
+};
+
+
 
 std::map<std::string, bool> included;
 std::ofstream outputF;
