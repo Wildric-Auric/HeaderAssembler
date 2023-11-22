@@ -2,13 +2,6 @@
 #include <string>
 
 
-enum class State {
-	Beg,
-	Directive,
-	Inlcude,
-	IncludeBeg,
-	Fail
-};
 
 bool FileExists(std::string dir);
 std::string GetFileName(std::string path, std::string* bFilename = nullptr, std::string* bExtension = nullptr, std::string* bRoot = nullptr);
