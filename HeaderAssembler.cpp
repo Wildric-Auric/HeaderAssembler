@@ -171,8 +171,22 @@ void Inc(const std::string& directory, const std::string& filename) {
 }
 
 
-void AssembleHeaders(const std::string& src, const std::string& dst, const std::string& outputName) {
+void AssembleHeaders(const std::string& src, const std::string& dst, const std::string& outputName, const std::string& first) {
 	std::vector<std::string> vec = GetDirFiles(src);
+    if (!first.empty()) {
+        int index = -1;
+	    for (int i = 0; i < vec.size(); ++i) {
+            if (vec[i] != first) continue;
+            index = i; 
+            break;
+        }
+        if (index == -1) {
+            printf("\"first\" file not found, it is ignored");
+        }
+        else {
+            std::swap(vec[0], vec[index]);
+        }
+    }
 	outputF.open(dst + "\\" + outputName);
 	if (!outputF) {
 		printf("Error openning dst file, check existence of output folder");

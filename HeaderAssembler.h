@@ -9,4 +9,4 @@ std::string GetFileName(std::string path, std::string* bFilename = nullptr, std:
 std::vector<std::string> GetDirFiles(const std::string& directory, const std::string& extensionFilter = "");
 
 void Inc(const std::string& directory, const std::string& filename);
-void AssembleHeaders(const std::string& src, const std::string& dst, const std::string& outputName);
+void AssembleHeaders(const std::string& src, const std::string& dst, const std::string& outputName, const std::string& first);
